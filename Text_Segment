@@ -1,0 +1,118 @@
+ Address    Code        Basic                     Source
+
+0x00400000  0x24020004  addiu $2,$0,0x0000000434       li   $v0, 4                  # syscall 4 = print string
+0x00400004  0x3c011001  lui $1,0x00001001     35       la   $a0, header_info        # load address of header_info string
+0x00400008  0x3424002b  ori $4,$1,0x0000002b       
+0x0040000c  0x0000000c  syscall               36       syscall
+0x00400010  0x24020004  addiu $2,$0,0x0000000439       li   $v0, 4
+0x00400014  0x3c011001  lui $1,0x00001001     40       la   $a0, lbl_name
+0x00400018  0x34240049  ori $4,$1,0x00000049       
+0x0040001c  0x0000000c  syscall               41       syscall
+0x00400020  0x24020004  addiu $2,$0,0x0000000444       li   $v0, 4
+0x00400024  0x3c011001  lui $1,0x00001001     45       la   $a0, lbl_section
+0x00400028  0x34240073  ori $4,$1,0x00000073       
+0x0040002c  0x0000000c  syscall               46       syscall
+0x00400030  0x24020004  addiu $2,$0,0x0000000449       li   $v0, 4
+0x00400034  0x3c011001  lui $1,0x00001001     50       la   $a0, header_init
+0x00400038  0x34240081  ori $4,$1,0x00000081       
+0x0040003c  0x0000000c  syscall               51       syscall
+0x00400040  0x2402000b  addiu $2,$0,0x0000000b56       li   $v0, 11                 # syscall 11 = print character
+0x00400044  0x2404004d  addiu $4,$0,0x0000004d57       li   $a0, 'M'                # load character 'M'
+0x00400048  0x0000000c  syscall               58       syscall
+0x0040004c  0x24020004  addiu $2,$0,0x0000000460       li   $v0, 4                  # print " : "
+0x00400050  0x3c011001  lui $1,0x00001001     61       la   $a0, separator
+0x00400054  0x342400a1  ori $4,$1,0x000000a1       
+0x00400058  0x0000000c  syscall               62       syscall
+0x0040005c  0x24020001  addiu $2,$0,0x0000000164       li   $v0, 1                  # syscall 1 = print integer
+0x00400060  0x2404004d  addiu $4,$0,0x0000004d65       li   $a0, 77                 # ASCII value of 'M'
+0x00400064  0x0000000c  syscall               66       syscall
+0x00400068  0x24020004  addiu $2,$0,0x0000000468       li   $v0, 4                  # print newline
+0x0040006c  0x3c011001  lui $1,0x00001001     69       la   $a0, newline
+0x00400070  0x342400a5  ori $4,$1,0x000000a5       
+0x00400074  0x0000000c  syscall               70       syscall
+0x00400078  0x2402000b  addiu $2,$0,0x0000000b73       li   $v0, 11                 # print character 'T'
+0x0040007c  0x24040054  addiu $4,$0,0x0000005474       li   $a0, 'T'
+0x00400080  0x0000000c  syscall               75       syscall
+0x00400084  0x24020004  addiu $2,$0,0x0000000477       li   $v0, 4
+0x00400088  0x3c011001  lui $1,0x00001001     78       la   $a0, separator
+0x0040008c  0x342400a1  ori $4,$1,0x000000a1       
+0x00400090  0x0000000c  syscall               79       syscall
+0x00400094  0x24020001  addiu $2,$0,0x0000000181       li   $v0, 1                  # print ASCII value 84
+0x00400098  0x24040054  addiu $4,$0,0x0000005482       li   $a0, 84
+0x0040009c  0x0000000c  syscall               83       syscall
+0x004000a0  0x24020004  addiu $2,$0,0x0000000485       li   $v0, 4
+0x004000a4  0x3c011001  lui $1,0x00001001     86       la   $a0, newline
+0x004000a8  0x342400a5  ori $4,$1,0x000000a5       
+0x004000ac  0x0000000c  syscall               87       syscall
+0x004000b0  0x2402000b  addiu $2,$0,0x0000000b90       li   $v0, 11                 # print character 'M'
+0x004000b4  0x2404004d  addiu $4,$0,0x0000004d91       li   $a0, 'M'
+0x004000b8  0x0000000c  syscall               92       syscall
+0x004000bc  0x24020004  addiu $2,$0,0x0000000494       li   $v0, 4
+0x004000c0  0x3c011001  lui $1,0x00001001     95       la   $a0, separator
+0x004000c4  0x342400a1  ori $4,$1,0x000000a1       
+0x004000c8  0x0000000c  syscall               96       syscall
+0x004000cc  0x24020001  addiu $2,$0,0x0000000198       li   $v0, 1                  # print ASCII value 77
+0x004000d0  0x2404004d  addiu $4,$0,0x0000004d99       li   $a0, 77
+0x004000d4  0x0000000c  syscall               100      syscall
+0x004000d8  0x24020004  addiu $2,$0,0x00000004102      li   $v0, 4
+0x004000dc  0x3c011001  lui $1,0x00001001     103      la   $a0, newline
+0x004000e0  0x342400a5  ori $4,$1,0x000000a5       
+0x004000e4  0x0000000c  syscall               104      syscall
+0x004000e8  0x2402000b  addiu $2,$0,0x0000000b107      li   $v0, 11                 # print character 'E'
+0x004000ec  0x24040045  addiu $4,$0,0x00000045108      li   $a0, 'E'
+0x004000f0  0x0000000c  syscall               109      syscall
+0x004000f4  0x24020004  addiu $2,$0,0x00000004111      li   $v0, 4
+0x004000f8  0x3c011001  lui $1,0x00001001     112      la   $a0, separator
+0x004000fc  0x342400a1  ori $4,$1,0x000000a1       
+0x00400100  0x0000000c  syscall               113      syscall
+0x00400104  0x24020001  addiu $2,$0,0x00000001115      li   $v0, 1                  # print ASCII value 69
+0x00400108  0x24040045  addiu $4,$0,0x00000045116      li   $a0, 69
+0x0040010c  0x0000000c  syscall               117      syscall
+0x00400110  0x24020004  addiu $2,$0,0x00000004119      li   $v0, 4
+0x00400114  0x3c011001  lui $1,0x00001001     120      la   $a0, newline
+0x00400118  0x342400a5  ori $4,$1,0x000000a5       
+0x0040011c  0x0000000c  syscall               121      syscall
+0x00400120  0x24020004  addiu $2,$0,0x00000004124      li   $v0, 4
+0x00400124  0x3c011001  lui $1,0x00001001     125      la   $a0, divider
+0x00400128  0x342400a7  ori $4,$1,0x000000a7       
+0x0040012c  0x0000000c  syscall               126      syscall
+0x00400130  0x24020004  addiu $2,$0,0x00000004130      li   $v0, 4                  # print the input prompt
+0x00400134  0x3c011001  lui $1,0x00001001     131      la   $a0, prompt_msg
+0x00400138  0x342400c4  ori $4,$1,0x000000c4       
+0x0040013c  0x0000000c  syscall               132      syscall
+0x00400140  0x24020005  addiu $2,$0,0x00000005134      li   $v0, 5                  # syscall 5 = read integer
+0x00400144  0x0000000c  syscall               135      syscall
+0x00400148  0x00024021  addu $8,$0,$2         136      move $t0, $v0                # $t0 = n (the number to test)
+0x0040014c  0x24090001  addiu $9,$0,0x00000001148      li   $t1, 1
+0x00400150  0x0128082a  slt $1,$9,$8          149      ble  $t0, $t1, not_prime     # branch if n <= 1
+0x00400154  0x10200015  beq $1,$0,0x00000015       
+0x00400158  0x24090002  addiu $9,$0,0x00000002152      li   $t1, 2
+0x0040015c  0x1109000b  beq $8,$9,0x0000000b  153      beq  $t0, $t1, is_prime      # branch if n == 2
+0x00400160  0x31090001  andi $9,$8,0x00000001 156      andi $t1, $t0, 1             # bitwise AND with 1 isolates LSB
+0x00400164  0x11200011  beq $9,$0,0x00000011  157      beqz $t1, not_prime          # if LSB == 0, number is even → not prime
+0x00400168  0x240a0003  addiu $10,$0,0x0000000160      li   $t2, 3                  # divisor starts at 3
+0x0040016c  0x00085842  srl $11,$8,0x00000001 161      srl  $t3, $t0, 1             # $t3 = n >> 1  (integer divide by 2 = n/2)
+0x00400170  0x016a082a  slt $1,$11,$10        166      bgt  $t2, $t3, is_prime      # branch to is_prime if $t2 > $t3 (branch if greater than)
+0x00400174  0x14200005  bne $1,$0,0x00000005       
+0x00400178  0x010a001a  div $8,$10            169      div  $t0, $t2                # LO = n / divisor, HI = n mod divisor
+0x0040017c  0x00006010  mfhi $12              170      mfhi $t4                     # $t4 = remainder (n mod divisor)
+0x00400180  0x1180000a  beq $12,$0,0x0000000a 173      beqz $t4, not_prime
+0x00400184  0x214a0002  addi $10,$10,0x0000000176      addi $t2, $t2, 2             # divisor += 2
+0x00400188  0x0810005c  j 0x00400170          178      j    check_loop              # repeat loop
+0x0040018c  0x24020001  addiu $2,$0,0x00000001184      li   $v0, 1
+0x00400190  0x00082021  addu $4,$0,$8         185      move $a0, $t0                # print n
+0x00400194  0x0000000c  syscall               186      syscall
+0x00400198  0x24020004  addiu $2,$0,0x00000004188      li   $v0, 4
+0x0040019c  0x3c011001  lui $1,0x00001001     189      la   $a0, prime_msg          # print " is a PRIME number."
+0x004001a0  0x342400d8  ori $4,$1,0x000000d8       
+0x004001a4  0x0000000c  syscall               190      syscall
+0x004001a8  0x08100072  j 0x004001c8          192      j    exit                    # jump to program exit
+0x004001ac  0x24020001  addiu $2,$0,0x00000001196      li   $v0, 1
+0x004001b0  0x00082021  addu $4,$0,$8         197      move $a0, $t0                # print n
+0x004001b4  0x0000000c  syscall               198      syscall
+0x004001b8  0x24020004  addiu $2,$0,0x00000004200      li   $v0, 4
+0x004001bc  0x3c011001  lui $1,0x00001001     201      la   $a0, not_prime_msg      # print " is NOT a prime number."
+0x004001c0  0x342400ed  ori $4,$1,0x000000ed       
+0x004001c4  0x0000000c  syscall               202      syscall
+0x004001c8  0x2402000a  addiu $2,$0,0x0000000a209      li   $v0, 10                 # syscall 10 = exit
+0x004001cc  0x0000000c  syscall               210      syscall
