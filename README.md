@@ -12,7 +12,6 @@ This repository contains a small “Computer Architecture / Assembly” style as
 ## 📁 Files
 
 - `Prime Number Checker Assembly Project (Mips Assemply).asm` — MIPS Assembly implementation (SPIM/MARS-style syscalls)
-- `Prime Number Assembly Project (Low Level).asm` — low-level assembly variant of the same idea (prime checker + student info output)
 - `Prime Number Checker Assembly Project (C++).cpp` — C++ reference implementation
 - `Prime Number Checker Assembly Project (Python).py` — Python reference implementation
 
